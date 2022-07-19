@@ -1,17 +1,17 @@
 <?php
 
-namespace SaltLaravelOrganization\Console\Commands;
+namespace SaltOrganization\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class SaltLaravelOrganizationCommand extends Command
+class SaltOrganizationCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'salt-laravel-organization:command';
+    protected $signature = 'organization:command';
 
     /**
      * The console command description.
