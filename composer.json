@@ -1,0 +1,45 @@
+{
+  "name": "faridlab/salt-laravel-organization",
+  "description": "",
+  "keywords": ["Laravel"],
+  "authors": [
+    {
+      "name": "Farid Hidayat",
+      "email": "farid@startapp.id"
+    }
+  ],
+  "homepage": "https://github.com/faridlab/salt-laravel-organization",
+  "require": {
+    "php": "^8.0.2",
+    "doctrine/dbal": "^3.3",
+    "faridlab/salt-laravel": "^9.0.2",
+    "faridlab/laravel-search-query": "^9.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0",
+    "orchestra/testbench": "^6.0",
+    "phpstan/phpstan": "^0.12"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "SaltLaravelOrganization\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SaltLaravelOrganization\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "SaltLaravelOrganization\\Providers\\SaltLaravelOrganizationServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit -c ./phpunit.xml --colors=always",
+    "analysis": "vendor/bin/phpstan analyse"
+  }
+}
