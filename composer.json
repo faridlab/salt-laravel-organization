@@ -23,18 +23,18 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "SaltLaravelOrganization\\": "src/"
+      "SaltOrganization\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "SaltLaravelOrganization\\Tests\\": "tests/"
+      "SaltOrganization\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "SaltLaravelOrganization\\Providers\\SaltLaravelOrganizationServiceProvider"
+        "SaltOrganization\\Providers\\SaltOrganizationServiceProvider"
       ]
     }
   },
