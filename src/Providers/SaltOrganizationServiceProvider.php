@@ -1,10 +1,10 @@
 <?php
 
-namespace SaltLaravelOrganization\Providers;
+namespace SaltOrganization\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class SaltLaravelOrganizationServiceProvider extends ServiceProvider
+class SaltOrganizationServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -29,6 +29,7 @@ class SaltLaravelOrganizationServiceProvider extends ServiceProvider
          * A web.php file has already been generated.
          */
         // $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/../../routes/api.php');
 
         /**
          * Translations
@@ -62,7 +63,7 @@ class SaltLaravelOrganizationServiceProvider extends ServiceProvider
          */
         // if ($this->app->runningInConsole()) {
         //     $this->commands([
-        //         \SaltLaravelOrganization\Console\Commands\SaltLaravelOrganizationCommand::class,
+        //         \SaltOrganization\Console\Commands\SaltOrganizationCommand::class,
         //     ]);
         // }
 
@@ -81,10 +82,10 @@ class SaltLaravelOrganizationServiceProvider extends ServiceProvider
          * Uncomment the first function call to load the migrations.
          * Uncomment the second function call to make the migrations publishable using the 'migrations' tags.
          */
-        // $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
-        // $this->publishes([
-        //     __DIR__.'/../../database/migrations/' => database_path('migrations')
-        // ], 'migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
+        $this->publishes([
+            __DIR__.'/../../database/migrations/' => database_path('migrations')
+        ], 'organization-migrations');
     }
 
     /**
@@ -100,8 +101,8 @@ class SaltLaravelOrganizationServiceProvider extends ServiceProvider
          * Uncomment this function call to load the config file.
          * If the config file is also publishable, it will merge with that file
          */
-        // $this->mergeConfigFrom(
-        //     __DIR__.'/../../config/salt-laravel-organization.php', 'salt-laravel-organization'
-        // );
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/salt-laravel-organization.php', 'organization'
+        );
     }
 }
