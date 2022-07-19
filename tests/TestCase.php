@@ -1,6 +1,6 @@
 <?php
 
-namespace SaltLaravelOrganization\Tests;
+namespace SaltOrganization\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Illuminate\Foundation\Application;
@@ -22,7 +22,7 @@ abstract class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
-            \SaltLaravelOrganization\Providers\SaltLaravelOrganizationServiceProvider::class
+            \SaltOrganization\Providers\SaltOrganizationServiceProvider::class
         ];
     }
 }
