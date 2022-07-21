@@ -17,9 +17,10 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('organization_id')->references('id')->on('organizations');
             $table->enum('type', [
-                'structural',
-                'functional'
-            ])->default('structural');
+                'department',
+                'level',
+                'position'
+            ])->default('department');
             $table->tinyInteger('order')->default(0);
             $table->string('name');
 
