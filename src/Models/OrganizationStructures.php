@@ -37,7 +37,7 @@ class OrganizationStructures extends Resources {
         'organization_id' => 'required|string',
         'structure_id' => 'nullable|string',
         'type' => 'required|string',
-        'order' => 'nullable|number',
+        'order' => 'nullable|integer',
         'name' => 'required|string',
     );
 

@@ -42,7 +42,7 @@ class Organizations extends Resources {
         'industry_id' => 'required|string',
         'organization_size' => 'required|string',
         'organization_type' => 'required|string',
-        'year_founded' => 'nullable|number',
+        'year_founded' => 'nullable|integer',
     );
 
     protected $auths = array (
