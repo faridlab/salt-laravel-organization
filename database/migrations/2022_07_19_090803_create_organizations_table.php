@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('url')->nullable();
 
-            $table->foreignUuid('industry_id')->references('id')->on('industries');
+            $table->foreignUuid('industry_id')->references('id')->on('organization_industries');
             $table->enum('organization_size', [
                 '0-1',
                 '2-10',
