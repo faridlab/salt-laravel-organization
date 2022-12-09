@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Models\User;
 
-class OrganizationIndustriesSeeder extends Seeder
+class OrganizationSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,8 +16,9 @@ class OrganizationIndustriesSeeder extends Seeder
      */
     public function run()
     {
+        $indITid = Str::uuid()->toString();
         $industries = [
-            ["id" => Str::uuid()->toString(), "name" => "Information Technology and Services"],
+            ["id" => $indITid, "name" => "Information Technology and Services"],
             ["id" => Str::uuid()->toString(), "name" => "Hospital & Health Care"],
             ["id" => Str::uuid()->toString(), "name" => "Construction"],
             ["id" => Str::uuid()->toString(), "name" => "Retail"],
@@ -166,7 +167,248 @@ class OrganizationIndustriesSeeder extends Seeder
             ["id" => Str::uuid()->toString(), "name" => "Legislative Office"],
             ["id" => Str::uuid()->toString(), "name" => "Mobile Games"]
         ];
-
         DB::table('organization_industries')->insert($industries);
+
+        $orgid = Str::uuid()->toString();
+        $orgs = [
+            [
+                "id" => $orgid,
+                'name' => 'PT Perintis Semesta Digital',
+                'description' => '',
+                'url' => 'https://startapp.id',
+                'industry_id' => $indITid,
+                'organization_size' => '0-1',
+                'organization_type' => 'Self Owned',
+                'year_founded' => '2015',
+            ]
+        ];
+        DB::table('organizations')->insert($orgs);
+
+        $bodid = Str::uuid()->toString();
+        $structures = [
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "level",
+                "name" => "Owner"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "level",
+                "name" => "Commissioner"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "level",
+                "name" => "Director"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "level",
+                "name" => "Manager"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "level",
+                "name" => "Supervisor"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "level",
+                "name" => "Specialist"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "level",
+                "name" => "Consultant"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "level",
+                "name" => "Lead"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "level",
+                "name" => "Staff"
+            ],
+
+            // DEPARTMENTS
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "Board of Commissioners"
+            ],
+            [
+                "id" => $bodid,
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "Board of Directors"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "Human Resource"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "Marketing"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "Customer Service Support"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "Sales"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "Accounting and Finance"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "Research and Development"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "IT Digital"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "Production"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "Operation"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "IT Support"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "Purchasing"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "department",
+                "name" => "Legal"
+            ],
+
+            // DIVISIONS
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => $bodid,
+                "type" => "position",
+                "name" => "CEO (Chief Executive Office)"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => $bodid,
+                "type" => "position",
+                "name" => "COO (Chief Operation Office)"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => $bodid,
+                "type" => "position",
+                "name" => "CFO (Chief Finance Office)"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => $bodid,
+                "type" => "position",
+                "name" => "CMO (Chief Marketing Office)"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "position",
+                "name" => "Human Resource Development"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "position",
+                "name" => "Talent Acquisition"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "position",
+                "name" => "IT Software Engineer"
+            ],
+            [
+                "id" => Str::uuid()->toString(),
+                "organization_id" => $orgid,
+                "structure_id" => null,
+                "type" => "position",
+                "name" => "Staff"
+            ],
+        ];
+
+        DB::table('organization_structures')->insert($structures);
     }
 }
